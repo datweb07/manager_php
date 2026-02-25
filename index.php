@@ -8,5 +8,5 @@ ob_start();         // tránh lỗi khi dùng các hàm như header, cookie,...
 
 require_once './config.php';
 
-require_once './modules/auth/login.php';
+// require_once './modules/auth/login.php';
 ?>
