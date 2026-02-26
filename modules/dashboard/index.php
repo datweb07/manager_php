@@ -6,3 +6,5 @@ if (!defined('_AUTH')){
 
 
 ?>
+
+<h1>Dashboard</h1>
