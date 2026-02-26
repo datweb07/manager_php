@@ -2,6 +2,7 @@
 
 const _AUTH = true;
 
+// thiết lập database
 const _HOST = 'localhost';
 const _DB = 'db_manager';
 const _USER = 'root';
