@@ -8,6 +8,9 @@ ob_start();         // tránh lỗi khi dùng các hàm như header, cookie,...
 
 require_once './config.php';
 require_once './includes/connect.php';
+require_once './includes/database.php';
+
+get_All("select * from course");
 
 $module = _MODULES;
 $action = _ACTION;
