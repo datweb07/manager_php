@@ -6,3 +6,6 @@ if (!defined('_AUTH')){
 
 
 ?>
+
+<h1 style="color: red;">Not Found</h1>
+<h2>Không tìm thấy trang</h2>

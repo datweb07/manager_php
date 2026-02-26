@@ -10,6 +10,9 @@ const _DRIVER = 'mysql';
 
 const _DEBUG = true;        // debug lỗi
 
+const _MODULES = 'dashboard';
+const _ACTION = 'index';
+
 // thiết lập host
 define('_HOST_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/manager_php');
 define('_HOST_URL_TEMPLATES', 'http://' . $_SERVER['HTTP_HOST'] . '/manager_php/templates');
