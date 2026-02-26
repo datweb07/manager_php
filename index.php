@@ -7,6 +7,7 @@ session_start();    // khởi tạo một phiên làm việc để lưu dữ li�
 ob_start();         // tránh lỗi khi dùng các hàm như header, cookie,...
 
 require_once './config.php';
+require_once './includes/connect.php';
 
 $module = _MODULES;
 $action = _ACTION;
@@ -25,7 +26,7 @@ $path = 'modules/' . $module . '/' . $action . '.php';
 
 if (!empty($path)) {
     if (file_exists($path)) {
-        echo 'Success connect';
+        // echo 'Successful connection';
         require_once $path;
     } else {
         require_once './modules/errors/404.php';
