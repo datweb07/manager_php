@@ -18,14 +18,15 @@ function get_All($sql)
 }
 
 // đếm số dòng
-function getRows($sql){
+function getRows($sql)
+{
     global $conn;
 
     $stm = $conn->prepare($sql);
 
     $stm->execute();
 
-    $result = $stm -> rowCount();
+    $result = $stm->rowCount();
     return $result;
 }
 
@@ -96,10 +97,9 @@ function update_data($table, $data, $condition = '')
 function delete_data($table, $condition = '')
 {
     global $conn;
-    if (!empty($condition)){
+    if (!empty($condition)) {
         $sql = "DELETE FROM $table WHERE $condition";
-    }
-    else {
+    } else {
         $sql = "DELETE FROM $table";
     }
 
@@ -111,10 +111,11 @@ function delete_data($table, $condition = '')
 
 
 // lấy ID vừa insert
-function last_query(){
+function last_query()
+{
     global $conn;
 
-    return $conn -> lastInsertId();
+    return $conn->lastInsertId();
 }
 
 ?>
