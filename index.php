@@ -11,12 +11,13 @@ require_once './includes/connect.php';
 require_once './includes/database.php';
 
 $data = [
-    'name' => 'dat',
-    'slug' => 'dat-web'
+    'name' => 'dat - new update',
+    'slug' => 'dat-web - new update'
 ];
 
-// get_All("select * from course");
-insert_data('course_category', $data);
+get_All("select * from course");
+// insert_data('course_category', $data);
+update_data('course_category', $data, 'id = 1');
 die();
 
 $module = _MODULES;
