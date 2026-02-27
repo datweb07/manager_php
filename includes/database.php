@@ -17,6 +17,18 @@ function get_All($sql)
     return $result;
 }
 
+// đếm số dòng
+function getRows($sql){
+    global $conn;
+
+    $stm = $conn->prepare($sql);
+
+    $stm->execute();
+
+    $result = $stm -> rowCount();
+    return $result;
+}
+
 function get_One($sql)
 {
     global $conn;
@@ -57,7 +69,7 @@ function update_data($table, $data, $condition = '')
     global $conn;
     $update = '';
 
-    foreach($data as $key => $value){
+    foreach ($data as $key => $value) {
         $update .= $key . ' = :' . $key . ', ';
     }
 
@@ -65,18 +77,44 @@ function update_data($table, $data, $condition = '')
 
     echo $update;
 
-    if (!empty($condition)){
+    if (!empty($condition)) {
         $sql = "UPDATE $table SET $update WHERE $condition";
-    }
-    else {
+    } else {
         $sql = "UPDATE $table SET $update";
     }
 
     $stm = $conn->prepare($sql);
 
-    
+
 
     $stm->execute($data);
+}
+
+
+
+// delete data
+function delete_data($table, $condition = '')
+{
+    global $conn;
+    if (!empty($condition)){
+        $sql = "DELETE FROM $table WHERE $condition";
+    }
+    else {
+        $sql = "DELETE FROM $table";
+    }
+
+    $stm = $conn->prepare($sql);
+
+
+    $stm->execute();
+}
+
+
+// lấy ID vừa insert
+function last_query(){
+    global $conn;
+
+    return $conn -> lastInsertId();
 }
 
 ?>
