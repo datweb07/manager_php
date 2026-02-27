@@ -10,7 +10,14 @@ require_once './config.php';
 require_once './includes/connect.php';
 require_once './includes/database.php';
 
-get_All("select * from course");
+$data = [
+    'name' => 'dat',
+    'slug' => 'dat-web'
+];
+
+// get_All("select * from course");
+insert_data('course_category', $data);
+die();
 
 $module = _MODULES;
 $action = _ACTION;

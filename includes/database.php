@@ -29,4 +29,24 @@ function get_One($sql)
     return $result;
 }
 
+
+// insert data
+function insert_data($table, $data)
+{
+    global $conn;
+
+    $keys = array_keys($data);
+    $column = implode(',', $keys);
+    $place_holder = ':' . implode(',:', $keys);
+
+    
+    $sql = "INSERT INTO $table ($column) VALUES ($place_holder)";        // :name: placeholder
+    echo $sql;
+    $stm = $conn->prepare($sql);      // bảo vệ khỏi tấn công như SQL Injection
+
+
+    // thực thi 
+    $stm->execute($data);
+}
+
 ?>
