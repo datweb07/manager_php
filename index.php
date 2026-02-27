@@ -11,14 +11,20 @@ require_once './includes/connect.php';
 require_once './includes/database.php';
 
 $data = [
-    'name' => 'dat - new update',
-    'slug' => 'dat-web - new update'
+    'name' => 'dat - new insert',
+    'slug' => 'dat-web - new insert'
 ];
 
-get_All("select * from course");
+// get_All("select * from course");
 // insert_data('course_category', $data);
-update_data('course_category', $data, 'id = 1');
-die();
+// update_data('course_category', $data, 'id = 1');
+// delete_data('course_category', 'id = 2');
+// $res = getRows("select * from course_category");
+// echo $res;
+
+$lastQur = last_query();
+echo $lastQur;
+
 
 $module = _MODULES;
 $action = _ACTION;
