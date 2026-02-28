@@ -9,6 +9,24 @@ ob_start();         // tránh lỗi khi dùng các hàm như header, cookie,...
 require_once './config.php';
 require_once './includes/connect.php';
 require_once './includes/database.php';
+require_once './includes/session.php';
+
+// setSession('dat', 'test');
+// setSession('loc', 'test_2');
+// $res = getSession('dat');
+// echo $res;
+
+// deleteSession('dat');
+
+// setSessionFlash('dat', 'test-sessionFlash');
+
+$res = getSessionFlash('dat');
+echo $res;
+
+
+echo '<pre>';
+print_r($_SESSION);
+echo '<pre>';
 
 $data = [
     'name' => 'dat - new insert',
@@ -22,8 +40,8 @@ $data = [
 // $res = getRows("select * from course_category");
 // echo $res;
 
-$lastQur = last_query();
-echo $lastQur;
+// $lastQur = last_query();
+// echo $lastQur;
 
 
 $module = _MODULES;
