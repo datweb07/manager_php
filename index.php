@@ -10,6 +10,7 @@ require_once './config.php';
 require_once './includes/connect.php';
 require_once './includes/database.php';
 require_once './includes/session.php';
+require_once './templates/layouts/index.php';
 
 // setSession('dat', 'test');
 // setSession('loc', 'test_2');
@@ -20,13 +21,15 @@ require_once './includes/session.php';
 
 // setSessionFlash('dat', 'test-sessionFlash');
 
-$res = getSessionFlash('dat');
-echo $res;
+// $res = getSessionFlash('dat');
+// echo $res;
 
 
-echo '<pre>';
-print_r($_SESSION);
-echo '<pre>';
+// echo '<pre>';
+// print_r($_SESSION);
+// echo '<pre>';
+
+
 
 $data = [
     'name' => 'dat - new insert',
